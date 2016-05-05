@@ -1,3 +1,7 @@
+> __NOTE__: This is a fork of <https://github.com/slymax/webview> for allowing Remote Debugging and Pinch-zooming.
+
+--
+
 This is a template project for Android Studio that allows you to create an android webview application in minutes. You can use it to create a simple app for your website or as a starting point for your HTML5 based android app. [Material Design Lite](http://www.getmdl.io/) and jQuery are already included.
 
 ### Getting Started

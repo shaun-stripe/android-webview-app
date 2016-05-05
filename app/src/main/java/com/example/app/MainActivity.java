@@ -1,6 +1,7 @@
 package com.example.app;
 
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,14 +28,23 @@ public class MainActivity extends Activity {
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-        // Use remote resource
-        // mWebView.loadUrl("http://example.com");
+        // Enabling pinch-zooming
+        webSettings.setBuiltInZoomControls(true);
+        webSettings.setDisplayZoomControls(false);
+
+        // Enable remote debugging
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            mWebView.setWebContentsDebuggingEnabled(true);
+        }
+
+        // Use remote resou  rce
+        // mWebView.loadUrl("http://humblebundle.com");
 
         // Stop local links and redirects from opening in browser instead of WebView
         // mWebView.setWebViewClient(new MyAppWebViewClient());
 
         // Use local resource
-        // mWebView.loadUrl("file:///android_asset/www/index.html");
+        mWebView.loadUrl("file:///android_asset/www/main.html");
     }
 
     // Prevent the back-button from closing the app
